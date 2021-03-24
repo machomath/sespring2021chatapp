@@ -1,11 +1,20 @@
+const { static } = require("express");
 const express = require("express");
+const path = require("path");
 
 app = express();
 
+app.set("view engine", "ejs");
+// app.set("views", "my-views"); //just incse you want to change the default location for ejs views
+console.log(path.join(__dirname, "public"));
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use("/about", (req, res, next)=>{
+    res.render("about", {title: "Chat About"});
+});
 
 app.use("/", (req, res, next)=>{
-    res.write('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title><style>h1{color: blue;}</style></head><body><h1>This is coming from Node</h1></body></html>');
-    res.send();
+    res.render("index", {title: "Chat Home"});
 });
 
 
