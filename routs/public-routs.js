@@ -3,8 +3,11 @@ const express = require('express');
 
 const publicController = require('../controllers/public-controller');
 const publicGetController = publicController.publicGetController;
+const publicPostController = publicController.publicPostController;
 
 const router = express.Router();
+
+router.post("/signup", publicPostController());
 
 router.get("/home", publicGetController("Home", ""));
 

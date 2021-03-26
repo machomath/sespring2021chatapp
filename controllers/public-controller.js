@@ -4,3 +4,9 @@ exports.publicGetController = (title, path)=>{
     };
 }
 
+exports.publicPostController = ()=>{
+    return (req, res, next)=>{
+        console.log(req.body);
+        res.redirect("/me");
+    }
+}

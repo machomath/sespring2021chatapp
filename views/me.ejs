@@ -6,6 +6,26 @@
 <body>
     <%- include('layouts/nav.ejs') -%>
     <h1>Signin | Signup</h1>
+    <div class="flex-container">
+        <div>
+            <h2>Signin</h2>
+            <form action="/signin" method="POST">
+                <input type="email" name="email" id="" placeholder="Email">
+                <input type="password" name="password" id="" placeholder="Password">
+                <button type="submit">Signin</button>
+            </form>
+        </div>
+        <div>
+            <h2>Signup</h2>
+            <form action="/signup" method="POST">
+                <input type="text" name="fullName" id="" placeholder="Full Name">
+                <input type="email" name="email" id="" placeholder="Email">
+                <input type="password" name="password" id="" placeholder="Password">
+                <button type="submit">Signup</button>
+            </form>
+
+        </div>
+    </div>
     
 </body>
 </html>
