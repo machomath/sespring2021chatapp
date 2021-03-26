@@ -5,7 +5,7 @@ const publicController = require('../controllers/public-controller');
 const publicGetController = publicController.publicGetController;
 const publicPostController = publicController.publicPostController;
 
-const router = express.Router();
+const router = express.Router(); 
 
 router.post("/signup", publicPostController());
 
