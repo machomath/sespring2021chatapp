@@ -1,3 +1,28 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 h1{
     color: blue;
+}
+
+nav{
+    background: skyblue;
+    padding: 2vw;
+
+}
+
+nav a{
+    font-size: 2vw;
+    font-weight: bold;
+    color: blue;
+    padding-right: 2vw;
+    text-decoration: none;
+}
+
+.this-page{
+    color: red;
 }

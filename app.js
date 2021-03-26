@@ -10,11 +10,19 @@ console.log(path.join(__dirname, "public"));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/about", (req, res, next)=>{
-    res.render("about", {title: "Chat About"});
+    res.render("about", {title: "About", page: "about"});
+});
+
+app.use("/chat-room", (req, res, next)=>{
+    res.render("chat-room", {title: "Chat Room", page: "chat-room"});
+});
+
+app.use("/me", (req, res, next)=>{
+    res.render("me", {title: "Me", page: "me"});
 });
 
 app.use("/", (req, res, next)=>{
-    res.render("index", {title: "Chat Home"});
+    res.render("index", {title: "Home", page: "index"});
 });
 
 
