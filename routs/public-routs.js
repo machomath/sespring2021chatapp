@@ -1,21 +1,14 @@
 const express = require("express");
-
+const publicController = require("../controllers/public-controllers");
+const publicGetController = publicController.publicGetController;
 const router = express.Router();
 
-router.use("/about", (req, res, next)=>{
-    res.render("about", {title: "About", page: "about"});
-});
+router.use("/about", publicGetController("About", "about"));
 
-router.use("/chat-room", (req, res, next)=>{
-    res.render("chat-room", {title: "Chat Room", page: "chat-room"});
-});
+router.use("/chat-room", publicGetController("Chat Room", "chat-room"));
 
-router.use("/me", (req, res, next)=>{
-    res.render("me", {title: "Me", page: "me"});
-});
+router.use("/me", publicGetController("Me", "me"));
 
-router.use("/", (req, res, next)=>{
-    res.render("index", {title: "Home", page: "index"});
-});
+router.use("/", publicGetController("Home", "index"));
 
 module.exports = router;
