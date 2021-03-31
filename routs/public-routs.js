@@ -7,7 +7,7 @@ const publicPostController = publicController.publicPostController;
 
 const router = express.Router(); 
 
-router.post("/signup", publicPostController());
+router.post("/signup", publicPostController("signup")); 
 
 router.get("/home", publicGetController("Home", ""));
 

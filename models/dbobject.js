@@ -1,3 +1,6 @@
-module.exports = class DBObject{
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
+module.exports = class DBObject{
+    
 }
